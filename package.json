@@ -15,7 +15,7 @@
     "mocha": "^9.1.2"
   },
   "scripts": {
-    "test": "mocha",
+    "test": "mocha ./tests/* --exit",
     "start": "node app.js",
     "dev": "nodemon app.js"
   },

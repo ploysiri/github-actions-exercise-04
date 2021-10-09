@@ -1,5 +1,12 @@
-FROM alpine:3.10
+FROM node:14
 
-COPY entrypoint.sh /entrypoint.sh
+WORKDIR /usr/src/app
 
-ENTRYPOINT [ "/entrypoint.sh" ]
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 8080
+CMD [ "node", "app.js" ]
